@@ -429,7 +429,7 @@ Vagrant.configure(2) do |config|
     b.vm.provision "install pyenv", :type => :shell, :privileged => false, :inline => install_pyenv("stretch64")
     b.vm.provision "install pythons", :type => :shell, :privileged => false, :inline => install_pythons("stretch64")
     b.vm.provision "build env", :type => :shell, :privileged => false, :inline => build_pyenv_venv("stretch64")
-    b.vm.provision "install borg", :type => :shell, :privileged => false, :inline => install_borg("llfuse")
+    b.vm.provision "install borg", :type => :shell, :privileged => false, :inline => install_borg("pyfuse3,llfuse")
     b.vm.provision "install pyinstaller", :type => :shell, :privileged => false, :inline => install_pyinstaller()
     b.vm.provision "build binary with pyinstaller", :type => :shell, :privileged => false, :inline => build_binary_with_pyinstaller("stretch64")
     b.vm.provision "run tests", :type => :shell, :privileged => false, :inline => run_tests("stretch64", ".*none.*")
